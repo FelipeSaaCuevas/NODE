@@ -7,9 +7,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-
     tools:context=".GuardarActivity">
 
+    <!-- Título: Nombre -->
     <TextView
         android:id="@+id/txtNombre"
         android:layout_width="wrap_content"
@@ -18,9 +18,12 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <!-- EditText: Nombre -->
     <EditText
         android:id="@+id/t2"
         android:layout_width="0dp"
@@ -28,43 +31,18 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:background="@color/white"
+        android:background="@drawable/edittext_background"
         android:hint="Escribe el nombre"
         android:textColor="@color/black"
+        android:textColorHint="@color/gray"
         android:inputType="text"
         android:minHeight="48dp"
+        android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
 
-    <TextView
-        android:id="@+id/txtAsunto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="20dp"
-        android:text="Asunto"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t4" />
-
-    <EditText
-        android:id="@+id/t3"
-        android:layout_width="355dp"
-        android:layout_height="327dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="32dp"
-        android:hint="Escribe el asunto"
-        android:background="@color/white"
-        android:textColor="@color/black"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAsunto" />
-
+    <!-- Título: Monto -->
     <TextView
         android:id="@+id/txtMonto"
         android:layout_width="wrap_content"
@@ -73,49 +51,134 @@
         android:layout_marginTop="20dp"
         android:text="Monto"
         android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/t2" />
 
+    <!-- EditText: Monto -->
     <EditText
         android:id="@+id/t4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:background="@color/white"
+        android:background="@drawable/edittext_background"
         android:hint="Monto"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
         android:inputType="number"
         android:minHeight="48dp"
+        android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtMonto" />
 
+    <!-- Chip: Número negativo -->
+    <com.google.android.material.chip.Chip
+        android:id="@+id/check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gasto"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:checkable="true"
+        android:clickable="true"
+        android:textColor="@color/black"
+        app:chipBackgroundColor="@color/white"
+        app:chipStrokeColor="@color/black"
+        app:chipStrokeWidth="1dp"
+        app:checkedIconVisible="true"
+        app:checkedIconTint="@color/purple_500"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t4" />
+
+    <!-- Texto explicativo del Chip -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(Monto negativo)"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/check"
+        app:layout_constraintTop_toTopOf="@+id/check"
+        app:layout_constraintBottom_toBottomOf="@+id/check" />
+
+    <!-- Título: Asunto -->
+    <TextView
+        android:id="@+id/txtAsunto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:text="Asunto"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/check" />
+
+    <!-- EditText: Asunto -->
+    <EditText
+        android:id="@+id/t3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/edittext_background"
+        android:hint="Escribe el asunto"
+        android:inputType="textMultiLine"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        android:padding="12dp"
+        android:gravity="start|top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAsunto"
+        app:layout_constraintBottom_toTopOf="@+id/b1"
+        app:layout_constraintVertical_weight="1" />
+
+    <!-- Botón: Guardar -->
     <Button
         android:id="@+id/b1"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
         android:text="Guardar"
+        android:padding="12dp"
+        android:backgroundTint="@color/purple_500"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/b2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t3"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintWidth_percent="0.4" />
 
+    <!-- Botón: Salida -->
     <Button
         android:id="@+id/b2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:text="salida"
+        android:text="Salir"
+        android:padding="12dp"
+        android:backgroundTint="@color/red"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.097"
         app:layout_constraintStart_toEndOf="@+id/b1"
-        app:layout_constraintTop_toBottomOf="@+id/t3"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintWidth_percent="0.4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

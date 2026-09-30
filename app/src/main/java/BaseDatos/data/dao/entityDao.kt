@@ -43,4 +43,5 @@ interface entityDao {
     // En tu interfaz DAO, agrega esta consulta:
     @Query("SELECT Nombre FROM nombre ORDER BY id DESC LIMIT 1")
     suspend fun obtenerUltimoNombre(): String?
+
 }
